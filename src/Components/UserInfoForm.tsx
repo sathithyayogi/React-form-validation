@@ -108,7 +108,7 @@ const UserInfoForm: React.FC = () => {
             settoSubmit(false);
 
         }
-        if (mobile.toString().length != 10) {
+        if (mobile.toString().length !== 10) {
             error.mobile = "Mobile Number should be 10 digit";
             settoSubmit(false);
 
