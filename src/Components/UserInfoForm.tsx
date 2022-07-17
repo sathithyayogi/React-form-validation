@@ -20,7 +20,7 @@ const UserInfoForm: React.FC = () => {
 
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const [mobile, setMobile] = useState<number>(0);
+    const [mobile, setMobile] = useState<string>("");
     const [country, setCountry] = useState<string>("");
     const [city, setCity] = useState<string>("");
     const [state, setState] = useState<string>("");
@@ -29,6 +29,8 @@ const UserInfoForm: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
     // const [toSubmit, settoSubmit] = useState<boolean>(false);
     var toSubmit: boolean = false;
+    var nameError: string = "";
+
 
     const handleClose = () => setShow(false);
 
@@ -38,10 +40,11 @@ const UserInfoForm: React.FC = () => {
         toSubmit = true;
         e.preventDefault();
 
-        setError(validateError(name, email, mobile, country, city, state, message))
-        console.log(toSubmit);
+        setError(validateError(name, email, parseInt(mobile), country, city, state, message))
 
         if (toSubmit) {
+            console.log(5055);
+            
             initializeValue();
             setError(errorInit);
             setShow(true)
@@ -54,7 +57,7 @@ const UserInfoForm: React.FC = () => {
     const initializeValue = () => {
         setName("");
         setEmail("");
-        setMobile(0);
+        setMobile("");
         setCountry("");
         setCity("");
         setState("")
