@@ -29,7 +29,6 @@ const UserInfoForm: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
     // const [toSubmit, settoSubmit] = useState<boolean>(false);
     var toSubmit: boolean = false;
-    var nameError: string = "";
 
 
     const handleClose = () => setShow(false);
