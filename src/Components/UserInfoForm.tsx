@@ -19,6 +19,8 @@ const UserInfoForm: React.FC = () => {
 
 
     const [name, setName] = useState<string>("");
+    const [nameError, setNameError] = useState<string>("");
+
     const [email, setEmail] = useState<string>("");
     const [mobile, setMobile] = useState<string>("");
     const [country, setCountry] = useState<string>("");
@@ -67,6 +69,7 @@ const UserInfoForm: React.FC = () => {
         var error: validateObj = errorInit;
         if (!name) {
             error.name = "Name is Mandatory";
+            setNameError("Name is Mandatory")
             // settoSubmit(false);
             toSubmit = false;
         }
